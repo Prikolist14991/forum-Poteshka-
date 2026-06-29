@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Форум — Демо</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand" onclick="navigate('#/')">Название форума</div>
+      <nav class="links">
+        <a href="#/about">FAQ</a>
+        <a href="#/rules">Правила</a>
+        <a href="#/support">Поддержка</a>
+      </nav>
+      <div class="search-wrap">
+        <button id="search-button" class="search-button" aria-label="Открыть поиск">🔍</button>
+      </div>
+      <div class="actions">
+        <button id="notif-button" class="icon-btn" aria-label="Уведомления">🔔</button>
+        <button class="icon-btn" onclick="navigate('#/settings')">⚙️</button>
+        <div class="profile">
+          <img id="header-avatar" src="" alt="avatar" class="avatar" title="Изменить аватар">
+          <span onclick="navigate('#/profile/1')" style="cursor:pointer;color:var(--muted);margin-left:6px">Иван</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-panel" class="search-panel" aria-hidden="true">
+    <div class="panel-inner">
+      <div class="panel-left">
+        <div class="search-input-row">
+          <input id="search-input" placeholder="Поиск..." />
+          <div class="search-types">
+            <button data-type="THREADS" class="type active">Треды</button>
+            <button data-type="CONVERSATIONS" class="type">Переписки</button>
+            <button data-type="USERS" class="type">Пользователи</button>
+          </div>
+        </div>
+        <div id="filters" class="filters">Фильтры (заглушка)</div>
+      </div>
+      <div class="panel-right">
+        <div id="search-results">Введите запрос для поиска...</div>
+      </div>
+    </div>
+  </div>
+
+  <main id="app" class="app">
+    <!-- rendered by JS -->
+  </main>
+
+  <input type="file" id="avatar-input" accept="image/*" style="display:none" />
+
+  <script src="app.js"></script>
+</body>
+</html>
